@@ -7,7 +7,7 @@
 using namespace std;
 
 void is_valid_email(const string& str) {
-    static const regex r(R"(([<a href=](https?\:\/\/)?([a-zA-Z0-9]+([a-zA-Z0-9-]+[a-zA-Z0-9]\.[a-zA-Z0-9]+)+(\/?[?=&\d.]?[\w-]+)+)))");
+    static const regex r(R"(([<a href="](https?\:\/\/)?([a-zA-Z0-9]+([a-zA-Z0-9-]+[a-zA-Z0-9]\.[a-zA-Z0-9]+)+(\/?[?=&\d.]?[\w\-\"]+)+)))");
     smatch match;
     if(regex_search(str, match, r))
         cout << match[0] << endl;
